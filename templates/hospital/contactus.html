@@ -1,0 +1,81 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Hospital Maganement System</title>
+
+    <style type="text/css">
+        input[type=text],
+        select {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type=email],
+        select {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+} */
+        /* input[type=submit] {
+  width: 100%;
+  background-color: #ffd3b5;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; 
+} */
+        
+        input[type=submit]:hover {
+            background-color: #ffaaa6;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {% include "hospital/navbar.html" %}
+    <br><br>
+
+    <center>
+        <p style="background-color: #E9ECEF; color: #007bff; font-size: 30px; margin-bottom: -20px"><b>Share with us your valuable feedback!</b></p>
+        <br>
+        <form method="POST">
+
+            {% csrf_token %}
+            <div class="form-group">
+                <p>
+                    <h5>{{ form.as_p }}</h5>
+                </p>
+                <br>
+                <center><input type="submit" value="Send Message" class='btn btn-primary btn-lg'></center>
+            </div>
+        </form>
+    </center>
+    {% include "hospital/footer.html" %}
+</body>
+
+</html>
